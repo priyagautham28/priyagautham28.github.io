@@ -152,13 +152,15 @@
   <h2>Research and Projects</h2>
 
   <div class="entry">
-    <div class="tag">In prep</div>
+    <div class="tag">Code + results</div>
     <div class="content">
       <b>Knowledge Distillation for Efficient Mathematical Reasoning in Compact Language Models</b>
       <div class="desc">
         Distilling a Qwen3-14B reasoning teacher into compact 1–2B student models (Llama-3.2-1B,
-        Qwen3-1.7B, Gemma-3-1B) for privacy-preserving local deployment, evaluated on GSM8K. Teacher
-        accuracy 92.3%; Llama-3.2-1B improved 43.4% → 51.3% after distillation.
+        Qwen3-1.7B, Gemma-3-1B) for privacy-preserving local deployment, evaluated on GSM8K. I owned the Qwen3-14B-AWQ teacher pipeline and the Llama-3.2-1B student (QLoRA). 
+        We distilled the same GSM8K traces into three 1–2B students, each chosen to test a different hypothesis. Llama had no prior math specialization, the control for how much generic distillation alone can teach (44.3% → 50.8%). 
+        Qwen3-1.7B, same family as the teacher and with a built-in reasoning mode, was the best-case upper bound, closing to within 12.7 pp of the teacher’s 92.27%. Gemma tested whether existing math-oriented training survives a 
+        second round of generic fine-tuning the most interesting result: it regressed 51.4% → 41.0% instead of keeping its edge. Same recipe, three outcomes: Distillation is not a guaranteed upgrade: generic SFT can overwrite a model’s prior specialization instead of building on it.
       </div>
       <div class="meta">
         <a href="https://github.com/priyagautham28/teacher-student-distillation" target="_blank" rel="noopener">[Code]</a>
@@ -171,8 +173,9 @@
     <div class="content">
       <b>MolmoAct2 × LIBERO Evaluation</b>
       <div class="desc">
-        Evaluation of Allen AI's MolmoAct2 vision-language-action model on the LIBERO benchmark suite
-        (Spatial, Object, Goal, Long) for robot manipulation.
+        Evaluated Allen AI’s MolmoAct2 VLA on LIBERO robot manipulation (3-person project. I ran the Object and Spatial suites, 1,000 episodes, plus failure/recovery analysis). 
+        Team pooled success across four suites was 97.95% (narrow 96.8–99.8% band). 
+        Failures were not uniform: they clustered on a few long, hard tasks, and the policy almost never recovered after an early mistake. High average success can hide concentrated risk.
       </div>
       <div class="meta">
         <a href="https://github.com/priyagautham28/molmoact2-libero-eval" target="_blank" rel="noopener">[Code]</a>
@@ -186,7 +189,9 @@
       <b>Language-Guided Grasp Point Prediction</b>
       <div class="desc">
         Comparing CLIP, Grounding DINO, and Florence-2 for predicting grasp points on objects from
-        natural-language instructions, evaluated on the PixMo-Points dataset.
+        natural-language instructions, evaluated on the PixMo-Points dataset.I built the CLIP baseline for predicting a grasp point from a text instruction, and compared it with the team’s Grounding DINO and Florence-2 runs. 
+        CLIP was strong at linking words to the right object, but weak at pinning a pixel: about 6% success at a 50px threshold, versus 32.8% (DINO) and 22.4% (Florence-2). 
+        Vision-language models cut down brute-force geometric search, still need a localizer to turn that understanding into a stable grasp in clutter.
       </div>
       <div class="meta">
         <a href="https://github.com/priyagautham28/grasp-point-prediction" target="_blank" rel="noopener">[Code]</a>
@@ -201,10 +206,6 @@
       </a>
     </div>
   </div>
-
-  <footer>
-    Last updated 2026.
-  </footer>
 
 </body>
 </html>
