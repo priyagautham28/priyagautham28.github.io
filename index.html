@@ -115,12 +115,17 @@
   <div class="subtitle">Seattle, WA</div>
 
   <p class="intro">
-    Hi, I'm Priyadarshini. My work is about helping robots see and understand the world the way humans do
-    connecting language, vision, and action so machines can reason about what they're looking at, not just
-    detect it. I spent seven years as a software engineer at Boeing, Ford, and Toyota Financial
-    Services, and I'm currently in a graduate program in AI &amp; Machine Learning for Engineering at the
-    University of Washington (2025–2027), applying that systems background to vision-language-action models,
-    knowledge distillation, and robotic grasping.
+    Hi, I'm Priyadarshini. My goal is to bring human-like intelligence to robots not by making them bigger, 
+    but by making them understand what they're looking at well enough to act on it correctly, and efficiently enough to actually run on a robot.
+    
+    I work on grounding language in visual perception for robotic manipulation, and on making the resulting models small enough to deploy.
+    
+    Recent work: comparing CLIP, Grounding DINO, and Florence-2 as grasp-point localizers from language (CLIP linked words to objects well 
+    but landed on a stable grasp pixel only ~6% of the time, versus 32.8% for Grounding DINO); evaluating MolmoAct2 on LIBERO manipulation, 
+    where the interesting finding was that failures clustered on a handful of hard tasks with almost no recovery after an early mistake and distilling 
+    a 14B math-reasoning model into 1–2B students, where the result that mattered was negative
+    generic distillation can erase a model's existing specialization instead of building on it.
+    
   </p>
   <div class="subtitle" style="margin-bottom:6px;">Contact: priyagautham28@gmail.com</div>
   <div class="links">
